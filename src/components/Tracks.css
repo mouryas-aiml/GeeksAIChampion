@@ -1,0 +1,266 @@
+.tracks-section {
+  padding: 8rem 2rem;
+  background: rgba(10, 10, 10, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #00ffff, transparent);
+  top: 15%;
+  left: 5%;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #00ff88, transparent);
+  bottom: 15%;
+  right: 5%;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+.tracks-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.track-card {
+  padding: 2.5rem;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  backdrop-filter: blur(20px);
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    var(--track-color, #00ffff) 0%, 
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  background: rgba(0, 255, 255, 0.08);
+  border-color: var(--track-color);
+  box-shadow: 0 30px 80px rgba(0, 255, 255, 0.3);
+}
+
+.track-card:hover::before {
+  opacity: 0.1;
+}
+
+.track-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--track-color, #00ffff), transparent);
+  opacity: 0.2;
+  filter: blur(40px);
+  transition: all 0.4s ease;
+}
+
+.track-card:hover .track-overlay {
+  opacity: 0.4;
+  transform: scale(1.5);
+}
+
+.track-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff, var(--track-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.track-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.track-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 25px;
+  font-size: 0.85rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.track-card:hover .tech-tag:hover {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: var(--track-color);
+  color: var(--track-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.tracks-cta {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.cta-text {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #00ffff, #00ff88);
+  border: none;
+  border-radius: 50px;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 968px) {
+  .tracks-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .track-card {
+    padding: 2rem;
+  }
+
+  .track-title {
+    font-size: 1.5rem;
+  }
+
+  .track-description {
+    font-size: 1rem;
+  }
+
+  .cta-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .track-icon {
+    font-size: 3rem;
+  }
+
+  .tracks-cta {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}
