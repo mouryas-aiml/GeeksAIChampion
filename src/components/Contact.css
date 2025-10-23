@@ -1,0 +1,149 @@
+.contact-section {
+  padding: 100px 2rem;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #00ffff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: capitalize;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-map {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
+  background: #fff;
+}
+
+.contact-map iframe {
+  filter: brightness(1) contrast(1);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  height: 450px;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  color: #4285f4;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #5a6c7d;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-map {
+    height: 350px;
+  }
+
+  .contact-card {
+    padding: 2rem;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 60px 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-map {
+    height: 300px;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}

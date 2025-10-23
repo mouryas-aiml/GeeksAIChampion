@@ -32,16 +32,13 @@ const Navbar = () => {
         <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
           <a onClick={() => scrollToSection('home')}>Home</a>
           <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('timeline')}>Schedule</a>
           <a onClick={() => scrollToSection('tracks')}>Tracks</a>
-          <a onClick={() => scrollToSection('prizes')}>Prizes</a>
           <a onClick={() => scrollToSection('sponsors')}>Sponsors</a>
-          <a onClick={() => scrollToSection('faq')}>FAQ</a>
+          <a onClick={() => scrollToSection('timeline')}>Schedule</a>
+          <a onClick={() => scrollToSection('team')}>Team</a>
+          <a onClick={() => scrollToSection('register')}>Register</a>
+          <a onClick={() => scrollToSection('contact')}>Contact Us</a>
         </div>
-
-        <button className="register-btn" onClick={() => scrollToSection('register')}>
-          Register Now
-        </button>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span>

@@ -9,7 +9,9 @@ import Tracks from './components/Tracks';
 import Prizes from './components/Prizes';
 import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
+import Team from './components/Team';
 import Register from './components/Register';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { initScrollAnimations, addScrollAnimationClasses } from './utils/scrollAnimations';
 
@@ -30,12 +32,12 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Timeline />
       <Tracks />
-      <Prizes />
       <Sponsors />
-      <FAQ />
+      <Timeline />
+      <Team />
       <Register />
+      <Contact />
       <Footer />
     </div>
   );
