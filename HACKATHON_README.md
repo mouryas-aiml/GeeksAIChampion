@@ -197,12 +197,3 @@ For any questions or issues, contact:
 - Email: hackathon@college.edu
 - Phone: +91 12345 67890
 
-## 📄 License
-
-This project is open source and available for educational purposes.
-
----
-
-**Built with ❤️ for hackathon organizers**
-
-Happy Hacking! 🎉
